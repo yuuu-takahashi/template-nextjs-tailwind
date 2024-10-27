@@ -19,7 +19,8 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - uses: ./.github/actions/yarn-install
+      - name: Install Dependencies
+        uses: ./.github/actions/yarn-install
         id: yarn-install
 
       - name: yarn build
