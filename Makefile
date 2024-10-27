@@ -9,29 +9,20 @@ up:
 yarn:
 	$(DC) run app yarn
 
-test:
-	$(DC) run app yarn test
-
 yarn-build:
 	$(DC) run app yarn build
 
-build-local:
-	$(DC) run app yarn build:local
-
-build-dev:
-	$(DC) run app yarn build:dev
-
-build-prod:
+yarn-build-prod:
 	$(DC) run app yarn build:prod
 
-serve-local:
-	$(DC) run app yarn serve:local
-
-serve-dev:
-	$(DC) run app yarn serve:dev
+serve:
+	$(DC) run app yarn serve
 
 serve-prod:
 	$(DC) run app yarn serve:prod
+
+test:
+	$(DC) run app yarn test
 
 test-update:
 	$(DC) run app yarn test:update
