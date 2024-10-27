@@ -15,7 +15,6 @@
     "serve:prod": "yarn build:prod && serve ./out",
     "format": "prettier --write '**/*.{js,json,ts,tsx}'",
     "lint": "eslint --fix '**/*.{js,ts,tsx}' --ignore-path .gitignore --no-cache",
-    "lint:style": "stylelint '**/*.tsx' --fix",
     "imagemin": "node --loader ts-node/esm ./imagemin.ts",
     "analyze": "ANALYZE=true yarn build:prod"
   },
