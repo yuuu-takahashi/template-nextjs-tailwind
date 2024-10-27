@@ -13,7 +13,7 @@
 - **Jest**: テストフレームワークとして使用。
 - **ESLint**: コード品質のための静的解析ツールとして使用。
 - **Prettier**: コードフォーマッターとして使用し、一貫したコードスタイルを保つ。
-- **imagemin**: 画像圧縮ツールとして使用し、プロジェクト内の画像の最適化を行う。
+- **Sharp**: 画像圧縮ツールとして使用し、プロジェクト内の画像の最適化を行う。
 
 ## 開発環境のセットアップ
 
@@ -40,6 +40,18 @@ yarn dev
 
 開発サーバーは <http://localhost:3000> で確認できます。
 
+### Dockerでの実行
+
+Dockerを使用してプロジェクトを実行する場合、以下の手順にしたがってください。
+
+1. コンテナーを起動します。
+
+  ```bash
+  make up
+  ```
+
+コンテナーが起動したら、開発サーバーは <http://localhost:3000> で確認できます。
+
 ### ビルドコマンド
 
 以下のコマンドは、プロジェクトのビルドと静的ファイルの確認に使用します。
@@ -51,6 +63,15 @@ yarn dev
 - `yarn serve:local`: ローカル開発用ビルドを実行し、ビルドされた静的ファイルを確認するためのサーバーを起動します。
 - `yarn serve:dev`: 開発環境用ビルドを実行し、ビルドされた静的ファイルを確認するためのサーバーを起動します。
 - `yarn serve:prod`: 本番環境用ビルドを実行し、ビルドされた静的ファイルを確認するためのサーバーを起動します。
+
+### Dockerを使用したビルド
+
+Dockerを使用してビルドを行う場合、以下のMakefileコマンドを使用します。
+
+- `make yarn-build`: プロジェクトを本番用にビルドします。
+- `make serve-local`: ローカル開発用ビルドを実行し、ビルドされた静的ファイルを確認するためのサーバーを起動します。
+- `make serve-dev`: 開発環境用ビルドを実行し、ビルドされた静的ファイルを確認するためのサーバーを起動します。
+- `make serve-prod`: 本番環境用ビルドを実行し、ビルドされた静的ファイルを確認するためのサーバーを起動します。
 
 ## テスト方法
 
@@ -90,6 +111,15 @@ yarn test:watch
 yarn analyze
 ```
 
+### Dockerを使用したテストの実行
+
+Dockerを使用してテストを実行する場合、以下のMakefileコマンドを使用します。
+
+- `make test`: テストを実行します。
+- `make test-update`: スナップショットを更新します。
+- `make test-watch`: ウォッチモードでテストを実行します。
+- `make analyze`: パフォーマンス分析を実行します。
+
 参考: <https://fwywd.com/tech/next-bundle-analyzer>
 
 ## デプロイ、リリース方法
@@ -98,11 +128,11 @@ yarn analyze
 
 1. ビルドコマンドを実行して静的ファイルを生成します。
 
-   ```bash
-   yarn build:prod
-   ```
+  ```bash
+  yarn build:prod
+  ```
 
-2. `out/` ディレクトリに生成されたファイルをウェブサーバーにアップロードします。
+1. `out/` ディレクトリに生成されたファイルをウェブサーバーにアップロードします。
 
 ## 参考
 
@@ -111,4 +141,4 @@ yarn analyze
 - [Jest Documentation](https://jestjs.io/docs/en/getting-started)
 - [ESLint Documentation](https://eslint.org/docs/user-guide/getting-started)
 - [Prettier Documentation](https://prettier.io/docs/en/index.html)
-- [imagemin Documentation](https://github.com/imagemin/imagemin)
+- [Sharp Documentation](https://sharp.pixelplumbing.com/)
