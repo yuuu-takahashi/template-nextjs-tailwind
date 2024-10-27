@@ -32,7 +32,7 @@ export const ElementModal = ({ children, id, close }: Props) => {
       className="cursor-pointer border-0 bg-transparent p-0 backdrop:bg-[rgba(0,0,0,0.7)]"
       id={id}
     >
-      <div onClick={(e) => e.stopPropagation()} className="cursor-default">
+      <div onClick={(e) => e.stopPropagation()} className="cursor-pointer">
         <div className="relative">
           <button
             className="absolute right-16 top-16 flex size-48 items-center justify-center rounded-8 hover:bg-lightGray"

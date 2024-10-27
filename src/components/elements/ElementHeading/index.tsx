@@ -3,7 +3,6 @@ import { ComponentPropsWithoutRef, ReactNode } from 'react';
 interface Props extends ComponentPropsWithoutRef<'h1' | 'h2' | 'h3' | 'h4'> {
   children: ReactNode;
   size?: '16' | '24' | '32';
-  isSpan?: boolean;
   weight?: '500' | '900';
   as: 'h1' | 'h2' | 'h3' | 'h4';
   className?: string;
@@ -15,6 +14,7 @@ export const ElementHeading = ({
   weight = '500',
   as: Tag,
   className = '',
+  ...props
 }: Props) => {
   const textSizeClass = {
     '16': 'text-16',
@@ -27,7 +27,10 @@ export const ElementHeading = ({
   }[weight];
 
   return (
-    <Tag className={`${textSizeClass} ${textWeightClass} ${className}`}>
+    <Tag
+      className={`${textSizeClass} ${textWeightClass} ${className}`}
+      {...props}
+    >
       {children}
     </Tag>
   );
