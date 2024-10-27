@@ -1,10 +1,10 @@
-import path from 'path';
 import fs from 'fs/promises';
 import imagemin from 'imagemin';
+import imageminGifsicle from 'imagemin-gifsicle';
 import imageminMozjpeg from 'imagemin-mozjpeg';
 import imageminPngquant from 'imagemin-pngquant';
-import imageminGifsicle from 'imagemin-gifsicle';
 import imageminSvgo from 'imagemin-svgo';
+import path from 'path';
 
 const deleteIfExists = async (filePath: string): Promise<void> => {
   try {
