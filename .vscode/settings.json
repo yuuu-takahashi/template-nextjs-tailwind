@@ -3,7 +3,6 @@
   "editor.formatOnSave": true,
   "editor.codeActionsOnSave": { "source.fixAll": "explicit" },
   "eslint.validate": ["typescript", "typescriptreact", "javascript"],
-  "stylelint.validate": ["scss"],
-  "scss.validate": false,
+  "css.validate": false,
   "cSpell.ignorePaths": ["**.json", "**.js", "**.mjs", "**.lock"]
 }

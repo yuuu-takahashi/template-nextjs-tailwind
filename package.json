@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "next dev",
+    "prebuild": "yarn format",
     "build": "next build && yarn imagemin",
     "build:local": "NODE_ENV=development yarn build",
     "build:dev": "NODE_ENV=development yarn build",
@@ -13,20 +14,17 @@
     "serve:dev": "yarn build:dev && serve ./out",
     "serve:prod": "yarn build:prod && serve ./out",
     "format": "prettier --write '**/*.{js,json,ts,tsx}'",
-    "lint": "eslint --fix '**/*.{js.ts,tsx}' --ignore-path .gitignore --no-cache",
-    "lint:style": "stylelint '**/*.scss' --fix",
+    "lint": "eslint --fix '**/*.{js,ts,tsx}' --ignore-path .gitignore --no-cache",
     "imagemin": "node --loader ts-node/esm ./imagemin.ts",
-    "analyze": "ANALYZE=true yarn build:prod",
-    "lighthouse": "lhci autorun --config=./.lighthouserc.json",
-    "lighthouse:local": "rm -rf .lighthouseci_result && yarn lighthouse"
+    "analyze": "ANALYZE=true yarn build:prod"
   },
   "dependencies": {
     "next": "^14.2.x",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "tailwindcss": "3.4.14"
   },
   "devDependencies": {
-    "@lhci/cli": "0.14.0",
     "@next/bundle-analyzer": "14.0.4",
     "@types/imagemin": "9.0.0",
     "@types/imagemin-gifsicle": "7.0.4",
@@ -36,24 +34,21 @@
     "@types/node": "22.5.5",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "autoprefixer": "10.4.20",
     "destyle.css": "4.0.1",
     "eslint": "^8",
     "eslint-config-next": "^14.2.x",
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-simple-import-sort": "12.1.1",
+    "eslint-plugin-tailwindcss": "3.17.4",
     "eslint-plugin-unused-imports": "4.1.4",
     "imagemin": "9.0.0",
     "imagemin-gifsicle": "^7.0.0",
     "imagemin-mozjpeg": "^10.0.0",
     "imagemin-pngquant": "^9.0.2",
     "imagemin-svgo": "^10.0.1",
-    "lint-staged": "^15.0.2",
     "prettier": "^3.0.3",
-    "sass": "1.78.0",
     "serve": "^14.2.1",
-    "stylelint": "16.9.0",
-    "stylelint-config-recess-order": "5.1.0",
-    "stylelint-config-standard-scss": "13.1.0",
     "ts-node": "10.9.2",
     "typescript": "^5"
   }

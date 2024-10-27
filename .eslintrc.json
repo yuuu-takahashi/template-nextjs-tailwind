@@ -1,5 +1,10 @@
 {
-  "extends": ["next/core-web-vitals", "next/typescript", "prettier"],
+  "extends": [
+    "next/core-web-vitals",
+    "next/typescript",
+    "prettier",
+    "plugin:tailwindcss/recommended"
+  ],
   "plugins": ["unused-imports", "simple-import-sort"],
   "rules": {
     "react/jsx-curly-brace-presence": "error",
@@ -13,6 +18,26 @@
     ],
     "unused-imports/no-unused-imports": "error",
     "simple-import-sort/imports": "error",
-    "simple-import-sort/exports": "error"
+    "simple-import-sort/exports": "error",
+    "no-console": [
+      "error",
+      {
+        "allow": ["warn", "error"]
+      }
+    ],
+    "no-restricted-imports": [
+      "error",
+      {
+        "patterns": ["../*", "./*"]
+      }
+    ],
+    "padding-line-between-statements": [
+      "error",
+      {
+        "blankLine": "always",
+        "prev": "*",
+        "next": "return"
+      }
+    ]
   }
 }

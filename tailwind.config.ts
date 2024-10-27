@@ -1,0 +1,101 @@
+import type { Config } from 'tailwindcss';
+
+const config: Config = {
+  content: ['./src/**/*.{js,ts,jsx,tsx,mdx}'],
+  theme: {
+    // https://www.colordic.org/monotone
+    colors: {
+      black: '#000000',
+      charcoal: '#303030',
+      darkGray: '#606060',
+      gray: '#e0e0e0',
+      lightGray: '#f0f0f0',
+      transparent: 'transparent',
+      white: '#ffffff',
+    },
+    fontFamily: {
+      Noto_Sans: ['Noto Sans JP', 'sans-serif'],
+    },
+    fontSize: {
+      14: '14px',
+      16: '16px',
+      24: '24px',
+      32: '32px',
+      64: '64px',
+    },
+    spacing: {
+      0: '0',
+      2: '2px',
+      4: '4px',
+      8: '8px',
+      12: '12px',
+      16: '16px',
+      20: '20px',
+      24: '24px',
+      32: '32px',
+      36: '36px',
+      48: '48px',
+      64: '64px',
+    },
+    borderRadius: {
+      2: '2px',
+      4: '4px',
+      8: '8px',
+      16: '16px',
+      full: '9999px',
+    },
+    borderWidth: {
+      0: '0px',
+      2: '2px',
+      4: '4px',
+    },
+    height: {
+      4: '4px',
+      8: '8px',
+      16: '16px',
+      20: '20px',
+      24: '24px',
+      32: '32px',
+      48: '48px',
+      64: '64px',
+      100: '100px',
+      500: '500px',
+      auto: 'auto',
+      full: '100%',
+      vh90: '90dvh',
+      vh200: '200dvh',
+    },
+    maxWidth: {
+      100: '100px',
+      400: '400px',
+      768: '768px',
+      1024: '1024px',
+    },
+    minWidth: {
+      200: '200px',
+      250: '250px',
+    },
+    screens: {
+      tablet: '768px',
+      pc: '1024px',
+    },
+    width: {
+      16: '16px',
+      20: '20px',
+      24: '24px',
+      32: '32px',
+      48: '48px',
+      100: '100px',
+      320: '320px',
+      375: '375px',
+      auto: 'auto',
+      fit: 'fit-content',
+      full: '100%',
+      vw90: '90vw',
+      vw95: '95vw',
+    },
+  },
+  plugins: [],
+};
+
+export default config;
