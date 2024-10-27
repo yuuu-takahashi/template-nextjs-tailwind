@@ -6,9 +6,11 @@
   "scripts": {
     "dev": "next dev",
     "prebuild": "yarn format && yarn test",
-    "build": "NODE_ENV=development next build && yarn imagemin",
+    "build": "next build && yarn imagemin",
+    "build:dev": "NODE_ENV=development yarn build",
     "build:prod": "NODE_ENV=production yarn build",
     "serve": "yarn build && serve ./out",
+    "serve:dev": "yarn build:dev && serve ./out",
     "serve:prod": "yarn build:prod && serve ./out",
     "format": "prettier --write '**/*.{js,json,ts,tsx}'",
     "lint": "eslint --fix '**/*.{js,ts,tsx}' --ignore-path .gitignore --no-cache",
