@@ -6,7 +6,12 @@ type Props = ComponentPropsWithoutRef<'a'> & {
   className?: string;
 };
 
-export const ElementLink = ({ children, href, className, ...props }: Props) => {
+export const ElementLink = ({
+  children,
+  href,
+  className = '',
+  ...props
+}: Props) => {
   const isExternalLink = useMemo(() => /^https?:\/\//.test(href), [href]);
 
   if (isExternalLink) {

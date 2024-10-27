@@ -17,7 +17,7 @@ export const ElementText = ({
   weight = '700',
   family = 'notoSans',
   truncateWidth,
-  className,
+  className = '',
   ...props
 }: Props) => {
   const textSizeClass = {

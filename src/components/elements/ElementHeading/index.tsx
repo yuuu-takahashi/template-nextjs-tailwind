@@ -14,7 +14,7 @@ export const ElementHeading = ({
   size = '16',
   weight = '500',
   as: Tag,
-  className,
+  className = '',
 }: Props) => {
   const textSizeClass = {
     '16': 'text-16',
@@ -27,7 +27,7 @@ export const ElementHeading = ({
   }[weight];
 
   return (
-    <Tag className={`${textSizeClass} ${textWeightClass}  ${className}`}>
+    <Tag className={`${textSizeClass} ${textWeightClass} ${className}`}>
       {children}
     </Tag>
   );

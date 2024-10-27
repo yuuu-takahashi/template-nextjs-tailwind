@@ -3,10 +3,9 @@ import { ElementImageInternal } from '@/components/elements/ElementImageInternal
 interface Props {
   name: string;
   size: string;
-  isQuest?: boolean;
 }
 
-export const ElementIcon = ({ name, size, isQuest }: Props) => {
+export const ElementIcon = ({ name, size }: Props) => {
   const iconSizeClass = {
     '14': 'size-14',
     '16': 'size-16',
@@ -19,11 +18,7 @@ export const ElementIcon = ({ name, size, isQuest }: Props) => {
 
   return (
     <div className={iconSizeClass}>
-      <ElementImageInternal
-        src={`/${isQuest ? 'quest' : 'common'}/icon_${name}`}
-        type="svg"
-        isContain
-      />
+      <ElementImageInternal src={`/common/icon_${name}`} type="svg" isContain />
     </div>
   );
 };
