@@ -1,10 +1,7 @@
 import fs from 'fs/promises';
-import imagemin from 'imagemin';
-import imageminGifsicle from 'imagemin-gifsicle';
-import imageminMozjpeg from 'imagemin-mozjpeg';
-import imageminPngquant from 'imagemin-pngquant';
-import imageminSvgo from 'imagemin-svgo';
+import { glob } from 'glob';
 import path from 'path';
+import sharp from 'sharp';
 
 const deleteIfExists = async (filePath: string): Promise<void> => {
   try {
@@ -17,32 +14,48 @@ const deleteIfExists = async (filePath: string): Promise<void> => {
   }
 };
 
+const optimizeImage = async (
+  inputPath: string,
+  outputPath: string,
+): Promise<void> => {
+  const extension = path.extname(inputPath).toLowerCase();
+  let image = sharp(inputPath);
+
+  switch (extension) {
+    case '.jpg':
+    case '.jpeg':
+      image = image.jpeg({ quality: 80 });
+      break;
+    case '.png':
+      image = image.png({ quality: 80, compressionLevel: 8 });
+      break;
+    case '.gif':
+      image = image.gif({ effort: 2 });
+      break;
+    case '.svg':
+      break;
+    default:
+      console.warn(`Unsupported file type: ${inputPath}`);
+
+      return;
+  }
+
+  await fs.mkdir(path.dirname(outputPath), { recursive: true });
+  await deleteIfExists(outputPath);
+  await image.toFile(outputPath);
+};
+
 const optimizeImages = async (
   inputDir: string,
   outputDir: string,
 ): Promise<void> => {
   try {
-    const files = await imagemin([inputDir], {
-      plugins: [
-        imageminMozjpeg({ quality: 80 }),
-        // @ts-expect-error: quality is required
-        imageminPngquant({
-          quality: [0.65, 0.8],
-        }),
-        imageminGifsicle(),
-        imageminSvgo(),
-      ],
-    });
+    const files: string[] = glob.sync(inputDir);
 
     await Promise.all(
-      files.map(async (file) => {
-        const outputPath = path.join(
-          outputDir,
-          path.relative('public', file.sourcePath),
-        );
-        await fs.mkdir(path.dirname(outputPath), { recursive: true });
-        await deleteIfExists(outputPath);
-        await fs.writeFile(outputPath, file.data);
+      files.map(async (file: string) => {
+        const outputPath = path.join(outputDir, path.relative('public', file));
+        await optimizeImage(file, outputPath);
       }),
     );
   } catch (error) {
