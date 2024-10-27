@@ -8,7 +8,7 @@ interface Props extends ComponentPropsWithoutRef<'input'> {
   value: string;
   isChecked: boolean;
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-  hoverClass: string;
+  className?: string;
 }
 
 export const ElementCheckBox = ({
@@ -16,11 +16,11 @@ export const ElementCheckBox = ({
   value,
   isChecked,
   onChange,
-  hoverClass,
+  className = '',
   ...props
 }: Props) => {
   return (
-    <label className={`flex cursor-pointer items-center gap-8 ${hoverClass}`}>
+    <label className={`flex cursor-pointer items-center gap-8 ${className}`}>
       <input
         id={id}
         type="checkbox"
