@@ -15,6 +15,10 @@ jobs:
       - uses: ./.github/actions/yarn-install
         id: yarn-install
 
+      - name: yarn test
+        run: |
+          yarn test
+
       - name: yarn build
         run: |
           yarn build
