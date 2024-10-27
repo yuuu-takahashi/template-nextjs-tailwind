@@ -3,6 +3,7 @@ description: 'This action installs dependencies using yarn'
 
 runs:
   using: 'composite'
+  shell: bash
   steps:
     - name: Setup Node.js
       uses: actions/setup-node@v3
@@ -13,7 +14,6 @@ runs:
       id: yarn-cache
       run: |
         echo "dir=$(yarn cache dir)" >> $GITHUB_OUTPUT
-      shell: bash
 
     - uses: actions/cache@v3
       with:
@@ -24,4 +24,3 @@ runs:
     - name: yarn install
       run: |
         yarn
-      shell: bash
