@@ -38,6 +38,7 @@
         "prev": "*",
         "next": "return"
       }
-    ]
+    ],
+    "tailwindcss/no-custom-classname": ["error"]
   }
 }

@@ -27,9 +27,7 @@ export const ElementHeading = ({
   }[weight];
 
   return (
-    <Tag
-      className={`${textSizeClass} ${textWeightClass} font-orbitron ${className}`}
-    >
+    <Tag className={`${textSizeClass} ${textWeightClass}  ${className}`}>
       {children}
     </Tag>
   );
