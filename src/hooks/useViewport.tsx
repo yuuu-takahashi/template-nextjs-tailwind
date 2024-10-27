@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-import { useResize } from './useResize';
+import { useResize } from '@/hooks/useResize';
 
 export const useViewport = (standardWidth = 360) => {
   const { windowWidth } = useResize();
