@@ -6,7 +6,7 @@ interface Props {
 }
 
 export const ElementIcon = ({ name, size }: Props) => {
-  const iconSizeClass = {
+  const sizeClass = {
     '14': 'size-14',
     '16': 'size-16',
     '20': 'size-20',
@@ -17,7 +17,7 @@ export const ElementIcon = ({ name, size }: Props) => {
   }[size];
 
   return (
-    <div className={iconSizeClass}>
+    <div className={sizeClass}>
       <ElementImageInternal src={`/common/icon_${name}`} type="svg" isContain />
     </div>
   );

@@ -16,21 +16,18 @@ export const ElementHeading = ({
   className = '',
   ...props
 }: Props) => {
-  const textSizeClass = {
+  const sizeClass = {
     '16': 'text-16',
     '24': 'text-24',
     '32': 'text-32',
   }[size];
-  const textWeightClass = {
+  const weightClass = {
     '500': 'font-medium',
     '900': 'font-black',
   }[weight];
 
   return (
-    <Tag
-      className={`${textSizeClass} ${textWeightClass} ${className}`}
-      {...props}
-    >
+    <Tag className={`${sizeClass} ${weightClass} ${className}`} {...props}>
       {children}
     </Tag>
   );

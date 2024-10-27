@@ -20,14 +20,14 @@ export const ElementText = ({
   className = '',
   ...props
 }: Props) => {
-  const textSizeClass = {
+  const sizeClass = {
     '14': 'text-14',
     '16': 'text-16',
     '24': 'text-24',
     '32': 'text-32',
     '64': 'text-64',
   }[size];
-  const textWeightClass = {
+  const weightClass = {
     '500': 'font-medium',
     '700': 'font-bold',
   }[weight];
@@ -41,7 +41,7 @@ export const ElementText = ({
 
   return (
     <Tag
-      className={`${textSizeClass} ${textWeightClass} ${familyClass} ${truncateClass} font-black ${className}`}
+      className={`${sizeClass} ${weightClass} ${familyClass} ${truncateClass} font-black ${className}`}
       {...props}
     >
       {children}
