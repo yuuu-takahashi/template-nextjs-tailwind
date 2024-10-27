@@ -25,9 +25,10 @@ const optimizeImages = async (
     const files = await imagemin([inputDir], {
       plugins: [
         imageminMozjpeg({ quality: 80 }),
+        // @ts-expect-error: quality is required
         imageminPngquant({
           quality: [0.65, 0.8],
-        }) as any,
+        }),
         imageminGifsicle(),
         imageminSvgo(),
       ],
