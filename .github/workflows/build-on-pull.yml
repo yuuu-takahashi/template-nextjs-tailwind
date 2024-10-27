@@ -2,12 +2,19 @@ name: build-on-pull
 
 on:
   pull_request:
-    branches:
-      - main
+    branches: [develop, main]
+
+defaults:
+  run:
+    shell: bash
+concurrency:
+  group: ${{ github.workflow }}-${{ github.head_ref }}
+  cancel-in-progress: true
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     steps:
       - name: Checkout
         uses: actions/checkout@v3
