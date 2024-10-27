@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "next dev",
-    "prebuild": "yarn format",
+    "prebuild": "yarn format && yarn test",
     "build": "next build && yarn imagemin",
     "build:local": "NODE_ENV=development yarn build",
     "build:dev": "NODE_ENV=development yarn build",
