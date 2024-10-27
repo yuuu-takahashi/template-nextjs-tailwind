@@ -1,33 +1,43 @@
-# temp-nextjs
+# template-nextjs-tailwind
 
-- Nextjs のテンプレートです。
+## Next.js テンプレート
+
+このリポジトリは Next.js のテンプレートプロジェクトです。
 
 ## 開発環境のセットアップ
 
-前提:
+### 前提条件
 
-- Node 18
+- Node.js 20.12.0
 - Yarn 1.22+
 
+### セットアップ手順
+
 ```bash
-git clone git@github.com:yu-takahashi-314/temp-nextjs.git
-cd temp-nextjs
+git clone git@github.com:yuuu-takahashi/template-nextjs-tailwind.git
+cd template-nextjs-tailwind
 yarn
 ```
 
-`yarn dev` を実行して <http://localhost:3000> の開発サーバーを立ち上げます
+### 開発サーバーの起動
 
-アプリケーションは <http://localhost:3000> で確認できます
+以下のコマンドを実行して開発サーバーを起動します。
 
-`yarn build:local` はローカル開発用の設定でアプリケーションをビルドします。
+```bash
+yarn dev
+```
 
-`yarn build:dev` 開発環境用の設定でアプリケーションをビルドします。
+開発サーバーは <http://localhost:3000> で確認できます。
 
-`yarn build:stg` ステージング環境用の設定でアプリケーションをビルドします。
+### ビルドコマンド
 
-`yarn build:prod` は本番環境用の設定でアプリケーションをビルドします。
+- `yarn build:local` ローカル開発用のビルド
+- `yarn build:dev` 開発環境用のビルド
+- `yarn build:prod` 本番環境用のビルド
 
-`yarn lint` は Next.js に組み込まれた ESLint の設定をします。
+### その他のコマンド
+
+- `yarn lint` ESLint の実行
 
 参考: <https://nextjs-ja-translation-docs.vercel.app/docs/getting-started>
 
@@ -35,21 +45,25 @@ yarn
 
 ### パフォーマンス分析
 
-`yarn analyze` 自動でブラウザが立ち上がるので、バンドルサイズ等の確認を行う
+以下のコマンドを実行すると、自動でブラウザが立ち上がりバンドルサイズ等の確認ができます。
+
+```bash
+yarn analyze
+```
 
 参考: <https://fwywd.com/tech/next-bundle-analyzer>
 
 ## デプロイ、リリース方法
 
-TODO:
+TODO: デプロイ手順を記載
 
 ## 設計資料・コーディング規約等のリンク
 
-TODO:
+TODO: 設計資料やコーディング規約のリンクを記載
 
 ## 開発プロセス
 
-TODO:
+TODO: 開発プロセスを記載
 
 ## 目次
 

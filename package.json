@@ -16,6 +16,9 @@
     "format": "prettier --write '**/*.{js,json,ts,tsx}'",
     "lint": "eslint --fix '**/*.{js,ts,tsx}' --ignore-path .gitignore --no-cache",
     "imagemin": "node --loader ts-node/esm ./imagemin.ts",
+    "test": "NODE_ENV=test jest",
+    "test:update": "yarn test --updateSnapshot",
+    "test:watch": "yarn test --watch",
     "analyze": "ANALYZE=true yarn build:prod"
   },
   "dependencies": {
@@ -26,6 +29,9 @@
   },
   "devDependencies": {
     "@next/bundle-analyzer": "14.0.4",
+    "@testing-library/dom": "10.4.0",
+    "@testing-library/jest-dom": "6.6.2",
+    "@testing-library/react": "16.0.1",
     "@types/imagemin": "9.0.0",
     "@types/imagemin-gifsicle": "7.0.4",
     "@types/imagemin-mozjpeg": "8.0.4",
@@ -47,6 +53,8 @@
     "imagemin-mozjpeg": "^10.0.0",
     "imagemin-pngquant": "^9.0.2",
     "imagemin-svgo": "^10.0.1",
+    "jest": "29.7.0",
+    "jest-environment-jsdom": "29.7.0",
     "prettier": "^3.0.3",
     "serve": "^14.2.1",
     "ts-node": "10.9.2",
