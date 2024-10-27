@@ -1,56 +1,114 @@
-# temp-nextjs
+# template-nextjs-tailwind
 
-- Nextjs のテンプレートです。
+## Next.jsテンプレート
+
+このリポジトリはNext.jsのテンプレートプロジェクトです。
+
+### 技術スタック
+
+このプロジェクトは、以下の技術を使用して構築されています：
+
+- **Next.js**: 静的サイトジェネレーター(SSG)として使用。
+- **Tailwind CSS**: スタイリングに使用。
+- **Jest**: テストフレームワークとして使用。
+- **ESLint**: コード品質のための静的解析ツールとして使用。
+- **Prettier**: コードフォーマッターとして使用し、一貫したコードスタイルを保つ。
+- **imagemin**: 画像圧縮ツールとして使用し、プロジェクト内の画像の最適化を行う。
 
 ## 開発環境のセットアップ
 
-前提:
+### 前提条件
 
-- Node 18
+- Node.js 20.12.0
 - Yarn 1.22+
 
+### セットアップ手順
+
 ```bash
-git clone git@github.com:yu-takahashi-314/temp-nextjs.git
-cd temp-nextjs
+git clone git@github.com:yuuu-takahashi/template-nextjs-tailwind.git
+cd template-nextjs-tailwind
 yarn
 ```
 
-`yarn dev` を実行して <http://localhost:3000> の開発サーバーを立ち上げます
+### 開発サーバーの起動
 
-アプリケーションは <http://localhost:3000> で確認できます
+以下のコマンドを実行して開発サーバーを起動します。
 
-`yarn build:local` はローカル開発用の設定でアプリケーションをビルドします。
+```bash
+yarn dev
+```
 
-`yarn build:dev` 開発環境用の設定でアプリケーションをビルドします。
+開発サーバーは <http://localhost:3000> で確認できます。
 
-`yarn build:stg` ステージング環境用の設定でアプリケーションをビルドします。
+### ビルドコマンド
 
-`yarn build:prod` は本番環境用の設定でアプリケーションをビルドします。
+以下のコマンドは、プロジェクトのビルドと静的ファイルの確認に使用します。
 
-`yarn lint` は Next.js に組み込まれた ESLint の設定をします。
-
-参考: <https://nextjs-ja-translation-docs.vercel.app/docs/getting-started>
+- `yarn build`: プロジェクトを本番用にビルドします。このコマンドでは、以下の処理が実行されます。
+  - コードの品質をチェックするために `yarn lint` が実行されます。
+  - コードをフォーマットするために `yarn format` が実行されます。
+  - ビルド先の `out/` ディレクトリ内の画像を圧縮・最適化するために `yarn imagemin` が実行されます。
+- `yarn serve:local`: ローカル開発用ビルドを実行し、ビルドされた静的ファイルを確認するためのサーバーを起動します。
+- `yarn serve:dev`: 開発環境用ビルドを実行し、ビルドされた静的ファイルを確認するためのサーバーを起動します。
+- `yarn serve:prod`: 本番環境用ビルドを実行し、ビルドされた静的ファイルを確認するためのサーバーを起動します。
 
 ## テスト方法
 
+### テストの実行
+
+以下のコマンドを実行してテストを実行します。
+
+```bash
+yarn test
+```
+
+テスト結果はターミナルに表示されます。
+
+### スナップショットの更新
+
+以下のコマンドを実行してスナップショットを更新します。
+
+```bash
+yarn test:update
+```
+
+### テストのウォッチモード
+
+以下のコマンドを実行してウォッチモードでテストを実行します。
+
+```bash
+yarn test:watch
+```
+
+ウォッチモードでは、ファイルの変更を監視し、自動的にテストが再実行されます。
+
 ### パフォーマンス分析
 
-`yarn analyze` 自動でブラウザが立ち上がるので、バンドルサイズ等の確認を行う
+以下のコマンドを実行すると、自動でブラウザが立ち上がりバンドルサイズ等の確認ができます。
+
+```bash
+yarn analyze
+```
 
 参考: <https://fwywd.com/tech/next-bundle-analyzer>
 
 ## デプロイ、リリース方法
 
-TODO:
+### デプロイ手順
 
-## 設計資料・コーディング規約等のリンク
+1. ビルドコマンドを実行して静的ファイルを生成します。
 
-TODO:
+   ```bash
+   yarn build:prod
+   ```
 
-## 開発プロセス
+2. `out/` ディレクトリに生成されたファイルをウェブサーバーにアップロードします。
 
-TODO:
+## 参考
 
-## 目次
-
-- [docs/README.md](docs/README.md)
+- [Next.js Documentation](https://nextjs.org/docs)
+- [Tailwind CSS Documentation](https://tailwindcss.com/docs)
+- [Jest Documentation](https://jestjs.io/docs/en/getting-started)
+- [ESLint Documentation](https://eslint.org/docs/user-guide/getting-started)
+- [Prettier Documentation](https://prettier.io/docs/en/index.html)
+- [imagemin Documentation](https://github.com/imagemin/imagemin)
