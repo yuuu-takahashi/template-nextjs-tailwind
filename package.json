@@ -37,6 +37,7 @@
     "@types/imagemin-mozjpeg": "8.0.4",
     "@types/imagemin-pngquant": "8.0.0",
     "@types/imagemin-svgo": "10.0.5",
+    "@types/jest": "29.5.14",
     "@types/node": "22.5.5",
     "@types/react": "^18",
     "@types/react-dom": "^18",
