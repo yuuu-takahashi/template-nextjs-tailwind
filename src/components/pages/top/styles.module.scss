@@ -1,0 +1,9 @@
+@import '@/styles/mixins';
+
+.text {
+  color: red;
+
+  @include sp-layout {
+    color: blue;
+  }
+}

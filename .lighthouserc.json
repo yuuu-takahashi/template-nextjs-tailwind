@@ -1,0 +1,22 @@
+{
+  "ci": {
+    "collect": {
+      "numberOfRuns": 1,
+      "startServerCommand": "yarn serve:prod",
+      "url": ["http://localhost:3000/"]
+    },
+    "assert": {
+      "preset": "lighthouse:no-pwa",
+      "assertions": {
+        "unused-css-rules": "off",
+        "bf-cache": "off",
+        "csp-xss": "off",
+        "uses-responsive-images": "off"
+      }
+    },
+    "upload": {
+      "target": "filesystem",
+      "outputDir": "./.lighthouseci_result"
+    }
+  }
+}
