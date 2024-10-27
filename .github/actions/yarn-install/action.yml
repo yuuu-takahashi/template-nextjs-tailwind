@@ -1,4 +1,5 @@
 name: yarn-install
+description: 'This action installs dependencies using yarn'
 
 runs:
   using: 'composite'
@@ -10,9 +11,9 @@ runs:
 
     - name: Get yarn cache directory
       id: yarn-cache
+      shell: bash
       run: |
         echo "dir=$(yarn cache dir)" >> $GITHUB_OUTPUT
-      shell: bash
 
     - uses: actions/cache@v3
       with:
@@ -21,6 +22,6 @@ runs:
         restore-keys: ${{ runner.os }}-node-
 
     - name: yarn install
+      shell: bash
       run: |
         yarn
-      shell: bash
