@@ -52,8 +52,6 @@ yarn dev
 - `yarn serve:dev`: 開発環境用ビルドを実行し、ビルドされた静的ファイルを確認するためのサーバーを起動します。
 - `yarn serve:prod`: 本番環境用ビルドを実行し、ビルドされた静的ファイルを確認するためのサーバーを起動します。
 
-参考: <https://nextjs-ja-translation-docs.vercel.app/docs/getting-started>
-
 ## テスト方法
 
 ### テストの実行
@@ -105,3 +103,12 @@ yarn analyze
    ```
 
 2. `out/` ディレクトリに生成されたファイルをウェブサーバーにアップロードします。
+
+## 参考
+
+- [Next.js Documentation](https://nextjs.org/docs)
+- [Tailwind CSS Documentation](https://tailwindcss.com/docs)
+- [Jest Documentation](https://jestjs.io/docs/en/getting-started)
+- [ESLint Documentation](https://eslint.org/docs/user-guide/getting-started)
+- [Prettier Documentation](https://prettier.io/docs/en/index.html)
+- [imagemin Documentation](https://github.com/imagemin/imagemin)
