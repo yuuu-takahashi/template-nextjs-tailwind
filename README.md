@@ -40,16 +40,6 @@ yarn dev
 
 開発サーバーは <http://localhost:3000> で確認できます
 
-### Dockerでの実行
-
-1. コンテナーを起動します
-
-  ```bash
-  make up
-  ```
-
-コンテナーが起動したら、開発サーバーは <http://localhost:3000> で確認できます
-
 ### ビルドコマンド
 
 以下のコマンドは、プロジェクトのビルドと静的ファイルの確認に使用します
@@ -61,15 +51,6 @@ yarn dev
 - `yarn build:prod`: プロジェクトを本番用にビルドします。このコマンドでは、以下の処理が実行されます
 - `yarn serve`: 開発用ビルドを実行し、ビルドされた静的ファイルを確認するためのサーバーを起動します
 - `yarn serve:prod`: 本番環境用ビルドを実行し、ビルドされた静的ファイルを確認するためのサーバーを起動します
-
-### Dockerを使用したビルド
-
-Dockerを使用してビルドを行う場合、以下のMakefileコマンドを使用します
-
-- `make yarn-build`: プロジェクトを開発用にビルドします
-- `make yarn-build-prod`: プロジェクトを本番用にビルドします
-- `make serve`: 開発用ビルドを実行し、ビルドされた静的ファイルを確認するためのサーバーを起動します
-- `make serve-prod`: 本番環境用ビルドを実行し、ビルドされた静的ファイルを確認するためのサーバーを起動します
 
 ## テスト方法
 
@@ -106,15 +87,6 @@ yarn test:watch
 ```bash
 yarn analyze
 ```
-
-### Dockerを使用したテストの実行
-
-Dockerを使用してテストを実行する場合、以下のMakefileコマンドを使用します
-
-- `make test`: テストを実行します
-- `make test-update`: スナップショットを更新します
-- `make test-watch`: ウォッチモードでテストを実行します
-- `make analyze`: パフォーマンス分析を実行します
 
 参考: <https://fwywd.com/tech/next-bundle-analyzer>
 
