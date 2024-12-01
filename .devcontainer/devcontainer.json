@@ -1,0 +1,33 @@
+{
+  "name": "Existing Dockerfile",
+  "dockerComposeFile": "docker-compose.yml",
+  "service": "web",
+  "workspaceFolder": "/app",
+  "shutdownAction": "stopCompose",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "DavidAnson.vscode-markdownlint",
+        "eamodio.gitlens",
+        "esbenp.prettier-vscode",
+        "gera2ld.markmap-vscode",
+        "github.vscode-github-actions",
+        "GitHub.vscode-pull-request-github",
+        "Gruntfuggly.todo-tree",
+        "mhutchie.git-graph",
+        "ms-azuretools.vscode-docker",
+        "dbaeumer.vscode-eslint",
+        "bradlc.vscode-tailwindcss",
+        "streetsidesoftware.code-spell-checker"
+      ],
+      "settings": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": { "source.fixAll": "explicit" },
+        "eslint.validate": ["typescript", "typescriptreact", "javascript"],
+        "css.validate": false,
+        "cSpell.ignorePaths": ["**.json", "**.js", "**.mjs", "**.lock"]
+      }
+    }
+  }
+}
