@@ -2,7 +2,7 @@
   "name": "Existing Dockerfile",
   "dockerComposeFile": "docker-compose.yml",
   "service": "web",
-  "workspaceFolder": "/app",
+  "workspaceFolder": "/workspace",
   "shutdownAction": "stopCompose",
   "customizations": {
     "vscode": {
