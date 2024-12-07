@@ -7,32 +7,49 @@
   "customizations": {
     "vscode": {
       "extensions": [
-        "DavidAnson.vscode-markdownlint",
-        "esbenp.prettier-vscode",
+        // Linting and Formatting
         "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode",
+        "DavidAnson.vscode-markdownlint",
         "streetsidesoftware.code-spell-checker",
+
+        // Git and GitHub
         "eamodio.gitlens",
-        "github.vscode-github-actions",
-        "GitHub.vscode-pull-request-github",
         "mhutchie.git-graph",
+        "GitHub.vscode-pull-request-github",
+        "github.vscode-github-actions",
+
+        // Docker
         "ms-azuretools.vscode-docker",
+
+        // Other
+        "bradlc.vscode-tailwindcss",
         "gera2ld.markmap-vscode",
-        "Gruntfuggly.todo-tree",
-        "bradlc.vscode-tailwindcss"
+        "Gruntfuggly.todo-tree"
       ],
       "settings": {
+        // Editor settings
+        "editor.tabSize": 2,
+        "files.trimTrailingWhitespace": true,
+        "files.insertFinalNewline": true,
         "editor.defaultFormatter": "esbenp.prettier-vscode",
         "editor.formatOnSave": true,
+
+        // Code actions on save
         "editor.codeActionsOnSave": {
           "source.fixAll": "explicit",
           "source.fixAll.eslint": "explicit"
         },
+
+        // ESLint validation
         "eslint.validate": [
           "typescript",
           "typescriptreact",
           "javascript",
           "javascriptreact"
         ],
+
+        // Spell checker settings
         "cSpell.ignorePaths": ["**.json", "**.js", "**.mjs", "**.lock"]
       }
     }
